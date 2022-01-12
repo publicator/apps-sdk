@@ -1,0 +1,36 @@
+{
+    "name": "publicator/apps-sdk",
+    "type": "library",
+    "description": "Publicator.me SDK for Apps",
+    "keywords": [
+        "publicator.me"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Publicator.me",
+            "email": "support@publicator.me"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "ext-json": "*",
+        "symfony/event-dispatcher": "^4.3|^5.0",
+        "timiki/rpc-client": "^3.3"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.13",
+        "phpstan/phpstan": "^0.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "Publicator\\AppsSDK\\": "src"
+        }
+    },
+    "config": {
+        "bin-dir": "bin",
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true
+        }
+    }
+}
