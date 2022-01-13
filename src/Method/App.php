@@ -6,7 +6,7 @@ use Timiki\RpcCommon\JsonResponse;
 
 class App extends AbstractMethod
 {
-    protected function getInfo(): JsonResponse
+    public function getInfo(): JsonResponse
     {
         return $this->call('app.getInfo');
     }
