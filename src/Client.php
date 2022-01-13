@@ -2,6 +2,7 @@
 
 namespace Publicator\AppsSDK;
 
+use Publicator\AppsSDK\Method\App;
 use Publicator\AppsSDK\Method\Auth;
 use Publicator\AppsSDK\Method\Communities;
 use Publicator\AppsSDK\Method\User;
@@ -45,5 +46,10 @@ class Client
     public function workspaces(string $userId): Workspaces
     {
         return new Workspaces($userId, $this);
+    }
+
+    public function app(): App
+    {
+        return new App($this);
     }
 }
