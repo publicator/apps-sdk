@@ -7,7 +7,7 @@ use Timiki\RpcCommon\JsonResponse;
 
 class Upload extends AbstractUserMethod
 {
-    protected function getUploadURL(string $type): JsonResponse
+    public function getUploadURL(string $type): JsonResponse
     {
         return $this->call('upload.getUploadURL', ['type' => $type]);
     }

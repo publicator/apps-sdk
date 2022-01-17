@@ -5,6 +5,7 @@ namespace Publicator\AppsSDK;
 use Publicator\AppsSDK\Method\App;
 use Publicator\AppsSDK\Method\Auth;
 use Publicator\AppsSDK\Method\Communities;
+use Publicator\AppsSDK\Method\Upload;
 use Publicator\AppsSDK\Method\User;
 use Publicator\AppsSDK\Method\Workspaces;
 use Timiki\RpcClient\Client as RPCClient;
@@ -51,5 +52,10 @@ class Client
     public function app(): App
     {
         return new App($this);
+    }
+
+    public function upload(string $userId): Upload
+    {
+        return new Upload($userId, $this);
     }
 }
