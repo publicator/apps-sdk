@@ -25,6 +25,7 @@ class Upload extends AbstractUserMethod
             'multipart' => [
                 [
                     'name' => 'file',
+                    'filename' => basename($filename),
                     'contents' => file_get_contents($filename),
                 ],
             ],
