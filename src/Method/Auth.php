@@ -6,8 +6,8 @@ use Timiki\RpcCommon\JsonResponse;
 
 class Auth extends AbstractMethod
 {
-    public function getByCode($code): JsonResponse
+    public function getByToken($token): JsonResponse
     {
-        return $this->call('user.getByCode', ['code' => $code]);
+        return $this->call('user.getByToken', ['token' => $token]);
     }
 }
