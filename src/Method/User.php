@@ -10,4 +10,9 @@ class User extends AbstractUserMethod
     {
         return $this->call('user.getById');
     }
+
+    public function hasPremium(): JsonResponse
+    {
+        return $this->call('user.hasPremium');
+    }
 }
