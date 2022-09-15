@@ -12,9 +12,9 @@ class Upload extends AbstractUserMethod
         return $this->call('upload.getUploadURL', ['type' => $type]);
     }
 
-    public function uploadImage(string $filename): array
+    public function upload(string $type, string $filename): array
     {
-        $uploadUrl = $this->getUploadURL('image');
+        $uploadUrl = $this->getUploadURL($type);
 
         if ($uploadUrl->isError()) {
             throw new \Exception('Failed get upload url');
@@ -36,5 +36,31 @@ class Upload extends AbstractUserMethod
         }
 
         return json_decode($result->getBody()->getContents(), true);
+    }
+
+    public function uploadImage(string $filename): array
+    {
+        $basename = explode('.', basename(strtolower($filename)));
+
+        if (($basename[1] ?? null) === 'gif') {
+            return $this->uploadGif($filename);
+        }
+
+        return $this->upload('image', $filename);
+    }
+
+    public function uploadVideo(string $filename): array
+    {
+        return $this->upload('video', $filename);
+    }
+
+    public function uploadAudio(string $filename): array
+    {
+        return $this->upload('audio', $filename);
+    }
+
+    public function uploadGif(string $filename): array
+    {
+        return $this->upload('gif', $filename);
     }
 }

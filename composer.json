@@ -16,11 +16,11 @@
         "php": "^7.4|^8.0",
         "ext-json": "*",
         "symfony/event-dispatcher": "^4.3|^5.0",
-        "timiki/rpc-client": "^3.3"
+        "timiki/rpc-client": "^4.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.13",
-        "phpstan/phpstan": "^0.11"
+        "phpstan/phpstan": "^0.12"
     },
     "autoload": {
         "psr-4": {
